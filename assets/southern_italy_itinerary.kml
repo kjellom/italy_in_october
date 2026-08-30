@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Southern Italy Itinerary (South of Rome)</name>
+  <description>Rome start, Sorrento peninsula hub, day trips. Amalfi Coast villages wind down for the season after Nov 1; Capri ferries stop running Oct 31.</description>
+
+  <Style id="hubStyle">
+    <IconStyle><color>ff0000ff</color><scale>1.3</scale>
+      <Icon><href>http://maps.google.com/mapfiles/kml/paletted/6-19.png</href></Icon></IconStyle>
+  </Style>
+  <Style id="dayTripStyle">
+    <IconStyle><color>ff00a5ff</color><scale>1.0</scale>
+      <Icon><href>http://maps.google.com/mapfiles/kml/paletted/8-13.png</href></Icon></IconStyle>
+  </Style>
+  <Style id="seasonalRiskStyle">
+    <IconStyle><color>ff0055ff</color><scale>1.0</scale>
+      <Icon><href>http://maps.google.com/mapfiles/kml/paletted/8-19.png</href></Icon></IconStyle>
+  </Style>
+  <Style id="routeStyle"><LineStyle><color>ff0000ff</color><width>3</width></LineStyle></Style>
+
+  <Folder>
+    <name>Hubs</name>
+
+    <Placemark>
+      <name>Rome</name>
+      <description>Arrival point for both travelers (LAX and BKK routes both connect well through Rome). A few days here at the start for meeting up and recovering from jet lag before heading south.</description>
+      <ExtendedData><Data name="id"><value>rome</value></Data><Data name="cat"><value>hubs</value></Data></ExtendedData>
+      <styleUrl>#hubStyle</styleUrl>
+      <Point><coordinates>12.4964,41.9028,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Naples Airport (car pickup)</name>
+      <description>Pick up the rental car here rather than in Naples city center, to avoid the ZTL restricted traffic zone.</description>
+      <ExtendedData><Data name="cat"><value>support</value></Data></ExtendedData>
+      <styleUrl>#dayTripStyle</styleUrl>
+      <Point><coordinates>14.2908,40.8845,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Massa Lubrense / Sant'Agata sui Due Golfi</name>
+      <description>Main base for the rest of the month. Quieter and more romantic than Sorrento itself, 10 minutes from Sorrento's amenities and transport links.</description>
+      <ExtendedData><Data name="id"><value>massa-lubrense</value></Data><Data name="cat"><value>hubs</value></Data></ExtendedData>
+      <styleUrl>#hubStyle</styleUrl>
+      <Point><coordinates>14.3459,40.5910,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Sorrento (fallback hub)</name>
+      <description>Year-round town that stays fully open through November, unlike smaller Amalfi Coast villages.</description>
+      <ExtendedData><Data name="id"><value>sorrento</value></Data><Data name="cat"><value>hubs</value></Data></ExtendedData>
+      <styleUrl>#dayTripStyle</styleUrl>
+      <Point><coordinates>14.3757,40.6263,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <Folder>
+    <name>Ancient Sites</name>
+
+    <Placemark>
+      <name>Pompeii</name>
+      <description>Archaeological site, no seasonal closure concern.</description>
+      <ExtendedData><Data name="id"><value>pompeii</value></Data><Data name="cat"><value>ancient</value></Data></ExtendedData>
+      <styleUrl>#dayTripStyle</styleUrl>
+      <Point><coordinates>14.4989,40.7461,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Herculaneum</name>
+      <description>Archaeological site, no seasonal closure concern.</description>
+      <ExtendedData><Data name="id"><value>herculaneum</value></Data><Data name="cat"><value>ancient</value></Data></ExtendedData>
+      <styleUrl>#dayTripStyle</styleUrl>
+      <Point><coordinates>14.3548,40.8058,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Paestum</name>
+      <description>Greek temples, longer day trip south into the Cilento.</description>
+      <ExtendedData><Data name="id"><value>paestum</value></Data><Data name="cat"><value>ancient</value></Data></ExtendedData>
+      <styleUrl>#dayTripStyle</styleUrl>
+      <Point><coordinates>15.0031,40.4204,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <Folder>
+    <name>Coastal Villages</name>
+
+    <Placemark>
+      <name>Positano</name>
+      <description>Amalfi Coast village. Drivable day trip; check whether specific restaurants/hotels are open on your travel dates.</description>
+      <ExtendedData><Data name="id"><value>positano</value></Data><Data name="cat"><value>villages</value></Data></ExtendedData>
+      <styleUrl>#seasonalRiskStyle</styleUrl>
+      <Point><coordinates>14.4849,40.6280,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Amalfi</name>
+      <description>Amalfi Coast town, larger and more likely to stay open than smaller villages.</description>
+      <ExtendedData><Data name="id"><value>amalfi</value></Data><Data name="cat"><value>villages</value></Data></ExtendedData>
+      <styleUrl>#dayTripStyle</styleUrl>
+      <Point><coordinates>14.6027,40.6340,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Ravello</name>
+      <description>Famous but calm in October/November, has real parking garages.</description>
+      <ExtendedData><Data name="id"><value>ravello</value></Data><Data name="cat"><value>villages</value></Data></ExtendedData>
+      <styleUrl>#dayTripStyle</styleUrl>
+      <Point><coordinates>14.6116,40.6497,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Cetara</name>
+      <description>Small fishing village, anchovies and colatura di alici. Check seasonal opening.</description>
+      <ExtendedData><Data name="id"><value>cetara</value></Data><Data name="cat"><value>villages</value></Data></ExtendedData>
+      <styleUrl>#seasonalRiskStyle</styleUrl>
+      <Point><coordinates>14.7002,40.6598,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <Folder>
+    <name>Island and City</name>
+
+    <Placemark>
+      <name>Capri</name>
+      <description>HARD CUTOFF: Ferries stop running for the season on October 31.</description>
+      <ExtendedData><Data name="id"><value>capri</value></Data><Data name="cat"><value>cities</value></Data></ExtendedData>
+      <styleUrl>#seasonalRiskStyle</styleUrl>
+      <Point><coordinates>14.2422,40.5527,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Naples</name>
+      <description>Food and city day trip.</description>
+      <ExtendedData><Data name="id"><value>naples</value></Data><Data name="cat"><value>cities</value></Data></ExtendedData>
+      <styleUrl>#dayTripStyle</styleUrl>
+      <Point><coordinates>14.2681,40.8518,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <Folder>
+    <name>Further Afield</name>
+
+    <Placemark>
+      <name>Castellabate</name>
+      <description>Medieval hilltop borgo above a national-park coastline, near Paestum.</description>
+      <ExtendedData><Data name="id"><value>castellabate</value></Data><Data name="cat"><value>afield</value></Data></ExtendedData>
+      <styleUrl>#dayTripStyle</styleUrl>
+      <Point><coordinates>14.9722,40.2933,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <Placemark>
+    <name>Rome to Naples/Sorrento route</name>
+    <description>General route south from Rome to the Sorrento peninsula hub.</description>
+    <ExtendedData><Data name="cat"><value>support</value></Data></ExtendedData>
+    <styleUrl>#routeStyle</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        12.4964,41.9028,0
+        14.2908,40.8845,0
+        14.3459,40.5910,0
+      </coordinates>
+    </LineString>
+  </Placemark>
+
+</Document>
+</kml>

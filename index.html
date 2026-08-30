@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sirens' Coast — Rome to the Sorrentine Peninsula</title>
+<meta name="description" content="A month south of Rome: ruins, a working coastline, and a home base on the Sorrentine Peninsula.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <defs>
+    <symbol id="icon-plane" viewBox="0 0 24 24"><polygon points="3,11 21,3 13,21 11,13 3,11"/></symbol>
+    <symbol id="icon-car" viewBox="0 0 24 24"><rect x="2" y="12" width="20" height="6" rx="2"/><path d="M5 12 L7 7 H17 L19 12"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/></symbol>
+    <symbol id="icon-house" viewBox="0 0 24 24"><polyline points="3,11 12,3 21,11"/><rect x="6" y="11" width="12" height="9"/><rect x="10" y="15" width="4" height="5"/></symbol>
+    <symbol id="icon-column" viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="4"/><line x1="4" y1="20" x2="20" y2="20"/><line x1="7" y1="4" x2="7" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="17" y1="4" x2="17" y2="20"/></symbol>
+    <symbol id="icon-wave" viewBox="0 0 24 24"><path d="M1 9 Q6 4 12 9 T23 9"/><path d="M1 15 Q6 10 12 15 T23 15"/></symbol>
+    <symbol id="icon-boat" viewBox="0 0 24 24"><path d="M3 16 L21 16 L18 20 H6 Z"/><line x1="12" y1="16" x2="12" y2="4"/><path d="M12 5 L18 8 L12 9 Z"/></symbol>
+    <symbol id="icon-mountain" viewBox="0 0 24 24"><polyline points="2,20 9,8 13,14 16,9 22,20"/></symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="23"/><line x1="1" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="23" y2="12"/><line x1="4.2" y1="4.2" x2="6.3" y2="6.3"/><line x1="17.7" y1="17.7" x2="19.8" y2="19.8"/><line x1="4.2" y1="19.8" x2="6.3" y2="17.7"/><line x1="17.7" y1="6.3" x2="19.8" y2="4.2"/></symbol>
+    <symbol id="icon-cloud-rain" viewBox="0 0 24 24"><path d="M6 12a4 4 0 1 1 1-7.9A5 5 0 0 1 17 8h1a3.5 3.5 0 0 1 0 7H6a3 3 0 0 1 0-3Z"/><line x1="8" y1="17" x2="7" y2="20"/><line x1="12" y1="17" x2="11" y2="20"/><line x1="16" y1="17" x2="15" y2="20"/></symbol>
+    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M4 20 C4 10 10 4 20 4 C20 14 14 20 4 20 Z"/><path d="M5 19 L18 6"/></symbol>
+    <symbol id="icon-calendar-x" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="7" y1="2" x2="7" y2="6"/><line x1="17" y1="2" x2="17" y2="6"/><line x1="9" y1="13" x2="15" y2="18"/><line x1="15" y1="13" x2="9" y2="18"/></symbol>
+    <symbol id="icon-tag" viewBox="0 0 24 24"><path d="M3 11 L11 3 H20 V12 L12 20 Z"/><circle cx="15.5" cy="7.5" r="1.5"/></symbol>
+    <symbol id="icon-crowd-down" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M4 20 C4 14 7 12 9 12 C11 12 14 14 14 20"/><circle cx="18" cy="6" r="4"/><line x1="16" y1="6" x2="20" y2="6"/></symbol>
+    <symbol id="icon-warning" viewBox="0 0 24 24"><polygon points="12,3 22,20 2,20"/><line x1="12" y1="9" x2="12" y2="14"/><line x1="12" y1="17" x2="12" y2="17.3"/></symbol>
+  </defs>
+</svg>
+
+<header class="hero">
+  <div class="tile-band" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="eyebrow">Lazio &amp; Campania · Late October &ndash; November</p>
+    <h1>The Sirens&rsquo; Coast</h1>
+    <p class="hero-sub">Rome south to the Sorrentine Peninsula &mdash; a month of ruins, lemon groves,
+      and a working coastline, planned around one home base instead of a suitcase that never stays put.</p>
+
+    <div class="glance" role="img" aria-label="Los Angeles and Bangkok flights meet in Rome, then a car south to a home base near Massa Lubrense and Sant'Agata for the rest of the month">
+      <div class="glance-chip"><svg class="icon"><use href="#icon-plane"/></svg><span>Los Angeles</span></div>
+      <div class="glance-chip"><svg class="icon"><use href="#icon-plane"/></svg><span>Bangkok</span></div>
+      <span class="glance-arrow">&rarr;</span>
+      <div class="glance-chip glance-chip--stop"><svg class="icon"><use href="#icon-house"/></svg><span>Rome<em>a few days</em></span></div>
+      <span class="glance-arrow"><svg class="icon"><use href="#icon-car"/></svg></span>
+      <div class="glance-chip glance-chip--stop"><svg class="icon"><use href="#icon-house"/></svg><span>Massa Lubrense<em>rest of the month</em></span></div>
+    </div>
+  </div>
+  <div class="tile-band tile-band--bottom" aria-hidden="true"></div>
+</header>
+
+<main>
+
+  <section class="panel" id="map-section">
+    <div class="panel-inner">
+      <p class="label">The route, at a glance</p>
+      <h2>Pan around, click a pin</h2>
+      <p class="section-note">The fastest way to see the shape of this trip. Drag to pan, scroll or pinch
+        to zoom, and click any pin for a short rundown of that stop &mdash; the map and the cards further
+        down stay in sync.</p>
+      <div id="map"></div>
+      <p class="map-legend">
+        <span><i style="background:#2F7A78"></i> Home bases</span>
+        <span><i style="background:#5C6B4F"></i> Ancient sites</span>
+        <span><i style="background:#B5533C"></i> Coastal villages</span>
+        <span><i style="background:#16323E"></i> Island &amp; city</span>
+        <span><i style="background:#8C6E4E"></i> Further afield</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="panel" id="who">
+    <div class="panel-inner two-col">
+      <div>
+        <p class="label">Who this is for</p>
+        <h2>Two travelers, one long way to meet</h2>
+      </div>
+      <div class="prose">
+        <p>One of us is flying in from Los Angeles, the other from Bangkok &mdash; Rome is where the two
+          routes actually cross, so that's where the trip starts. From there we're not chasing a new hotel
+          every second night. We wanted one real home on the Sorrentine Peninsula, a car, and enough time
+          to let the same coastline become familiar rather than photographed once and left behind.</p>
+        <p>We're after the quieter version of this coast: a village where the restaurants cook for the
+          people who live there, day trips to the places worth the crowds, and evenings with nowhere
+          particular to be.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel panel--tint" id="background">
+    <div class="panel-inner two-col">
+      <div>
+        <p class="label">The region, briefly</p>
+        <h2>Where Rome hands off to the sea</h2>
+      </div>
+      <div class="prose">
+        <p>This stretch of Italy is layered rather than linear. Rome sits at the center of an empire's worth
+          of ruins, still lived in, still a functioning capital of nearly three million people. An hour and
+          a half south, the Bay of Naples is dominated by Vesuvius &mdash; the volcano that buried Pompeii and
+          Herculaneum in 79 CE and still stands directly over the city today. Further along, the Sorrentine
+          Peninsula splits two seas from a single ridge of lemon terraces and olive groves, and the Amalfi
+          Coast unfolds along a single cliff road that connects fishing villages that spent most of history
+          more interested in each other than in the rest of the world.</p>
+        <p>Greek colonists, Roman emperors, medieval maritime republics, and Grand Tour poets all passed
+          through here in some order &mdash; the ground rarely lets you forget it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="conditions">
+    <div class="panel-inner">
+      <p class="label">Why here, and why now</p>
+      <h2>What late October and November actually bring</h2>
+      <div class="conditions-grid">
+        <div class="condition-col condition-col--good">
+          <h3>Working in our favor</h3>
+          <ul>
+            <li><svg class="icon"><use href="#icon-sun"/></svg>Daytime temperatures still comfortable, typically the 60s&ndash;70s&deg;F on the coast through late October</li>
+            <li><svg class="icon"><use href="#icon-crowd-down"/></svg>Summer crowds gone &mdash; the coast road, the ruins, and the ferries are all easier to move through</li>
+            <li><svg class="icon"><use href="#icon-leaf"/></svg>Lemon and olive harvest season on the peninsula &mdash; the groves are working, not decorative</li>
+            <li><svg class="icon"><use href="#icon-sun"/></svg>Clear autumn light, especially useful for the coastline and the ruins alike</li>
+            <li><svg class="icon"><use href="#icon-tag"/></svg>Lower prices and far more room to actually get a table</li>
+          </ul>
+        </div>
+        <div class="condition-col condition-col--watch">
+          <h3>Working against us</h3>
+          <ul>
+            <li><svg class="icon"><use href="#icon-calendar-x"/></svg><strong>November 1</strong> is the traditional end of season here &mdash; many smaller
+              restaurants and hotels close around then, independent of the actual weather</li>
+            <li><svg class="icon"><use href="#icon-boat"/></svg><strong>Capri ferries stop entirely on October 31</strong> &mdash; a hard cutoff, not a
+              soft one</li>
+            <li><svg class="icon"><use href="#icon-cloud-rain"/></svg>Rain becomes more likely as November goes on, and daylight keeps shrinking</li>
+            <li><svg class="icon"><use href="#icon-warning"/></svg>Some of the smallest Amalfi Coast villages thin out fast after the season ends &mdash;
+              worth confirming directly before counting on any one restaurant or shop</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel panel--tint" id="destinations">
+    <div class="panel-inner">
+      <p class="label">Click around</p>
+      <h2>The stops</h2>
+      <p class="section-note">Each card opens with history, what it's actually like today, something worth
+        eating, and one fact worth knowing. Grouped by what they are, not just where they sit on the map.</p>
+
+      <div class="dest-group" data-group="hubs">
+        <h3 class="group-title">Home bases</h3>
+        <div class="dest-grid"></div>
+      </div>
+      <div class="dest-group" data-group="ancient">
+        <h3 class="group-title">Ancient sites</h3>
+        <div class="dest-grid"></div>
+      </div>
+      <div class="dest-group" data-group="villages">
+        <h3 class="group-title">Coastal villages</h3>
+        <div class="dest-grid"></div>
+      </div>
+      <div class="dest-group" data-group="cities">
+        <h3 class="group-title">Island &amp; city</h3>
+        <div class="dest-grid"></div>
+      </div>
+      <div class="dest-group" data-group="afield">
+        <h3 class="group-title">Further afield</h3>
+        <div class="dest-grid"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Rome &rarr; Sorrentine Peninsula &middot; a working itinerary, not a brochure.</p>
+</footer>
+
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-thumb" id="modal-thumb"></div>
+    <div class="modal-body">
+      <p class="label" id="modal-tag"></p>
+      <h2 id="modal-title"></h2>
+      <div class="modal-section">
+        <h4>History</h4>
+        <p id="modal-history"></p>
+      </div>
+      <div class="modal-section">
+        <h4>Today</h4>
+        <p id="modal-today"></p>
+      </div>
+      <div class="modal-section">
+        <h4>On the table</h4>
+        <p id="modal-cuisine"></p>
+      </div>
+      <div class="modal-section modal-section--fact">
+        <h4>Worth knowing</h4>
+        <p id="modal-fact"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/@mapbox/togeojson@0.16.0/togeojson.js"></script>
+<script src="https://unpkg.com/@mapbox/leaflet-omnivore@0.3.4/leaflet-omnivore.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
